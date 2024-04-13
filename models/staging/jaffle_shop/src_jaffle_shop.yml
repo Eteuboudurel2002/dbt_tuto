@@ -1,0 +1,36 @@
+version: 2
+
+sources: 
+  - name: jaffle_shop
+    database: raw
+    tables:
+      - name: customers
+        description: > 
+          Tables for the jaffle shop's customer
+          id and name
+        columns:
+          - name: id
+            description: primary key for customer
+            tests:
+              - unique:
+                  tags: ['unicity']
+              - not_null:
+                  config:
+                    severity: warn
+                    warn_if: ">5"
+                    error_if: ">10"
+      - name: orders
+        columns:
+          - name: id
+            description: primary key for orders
+            tests:
+              - unique :
+                  tags: ['unicity']
+              - not_null
+          - name: user_id
+            tests:
+              - relationships:
+                  to: source('jaffle_shop', 'customers')
+                  field: id
+                  
+
