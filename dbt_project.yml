@@ -37,6 +37,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   dbt_tuto:
+    +required_tests: {"unique.*|not_null": 2 }
     mart:
       +materialized: table
+
+tests:
+  dbt_tuto:
+    +severity: warn
+    +store_failures: true
+    +schema: failures
     

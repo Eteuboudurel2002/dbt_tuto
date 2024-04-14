@@ -1,8 +1,10 @@
 {{config(
-    severity = 'warn')}}
+    severity = 'error',
+    store_failures = true)}}
+
 select 
     order_id,
-     count(*)
+    count(*) as number
 from {{ref("stg_payments")}}
 group by order_id
 having sum(payment_amount) <= 0 

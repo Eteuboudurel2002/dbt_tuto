@@ -1,3 +1,7 @@
+{{config(
+    required_tests = None
+)}}
+
 with customers as (
     select * from {{ref("stg_customers")}}
 ),
