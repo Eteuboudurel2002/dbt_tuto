@@ -1,7 +1,7 @@
 {{config(
     severity = 'error',
     store_failures = true)}}
--- comment
+-- new comment to test CI with dbt
 select 
     order_id,
     count(*) as number
