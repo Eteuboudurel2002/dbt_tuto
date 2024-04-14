@@ -1,6 +1,6 @@
 {{config(
     severity = 'warn',
-    warn_if = '>30'
+    warn_if = '>30',
     store_failures = true)}}
 -- new comment to test CI with dbt
 select 
