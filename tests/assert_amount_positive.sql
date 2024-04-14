@@ -1,7 +1,7 @@
 {{config(
     severity = 'error',
     store_failures = true)}}
-
+-- comment
 select 
     order_id,
     count(*) as number
