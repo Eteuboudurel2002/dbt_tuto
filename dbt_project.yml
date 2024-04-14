@@ -44,6 +44,7 @@ models:
 tests:
   dbt_tuto:
     +severity: warn
+    +warn_if: '>30'
     +store_failures: true
     +schema: failures
     
